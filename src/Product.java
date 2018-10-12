@@ -1,3 +1,15 @@
+/*///////////////////////////////////////////////////////////////////////////////////
+Author: Charly Garcia-Valero
+  Date: 10/12/2018
+  File: Product.java
+  Description: This program implements the Item.Java interface to a create a Product
+  that will be manufactured. The item created will have the features of
+  + The manufacturer of the product
+  + Name
+  + Serial Number
+  + Date it was manufactured
+
+*////////////////////////////////////////////////////////////////////////////////////
 import java.util.Date;
 
 public abstract class Product implements Item {
