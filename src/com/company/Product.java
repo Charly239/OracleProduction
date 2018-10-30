@@ -1,23 +1,23 @@
+package com.company;
 /*///////////////////////////////////////////////////////////////////////////////////
 Author: Charly Garcia-Valero
   Date: 10/12/2018
-  File: Product.java
-  Description: This program implements the Item.Java interface to a create a Product
+  File: com.company.Product.java
+  Description: This program implements the com.company.Item.Java interface to a create a com.company.Product
   that will be manufactured. The item created will have the features of
   + The manufacturer of the product
   + Name
   + Serial Number
   + Date it was manufactured
-
 *////////////////////////////////////////////////////////////////////////////////////
 import java.util.Date;
 
-public abstract class Product implements Item {
+public abstract class Product implements Item, Comparable<Product> {
     private int serialNumber;
     private String manufacturer;
     private Date manufacturedOn;
     private String name;
-    private static int currentProductionNumber;
+    private static int currentProductionNumber = 1;
 
     public Product(String N){
     name = N;
@@ -48,10 +48,14 @@ public abstract class Product implements Item {
     }
 
     public String toString() {
-        return ("Manufacturer  : " + manufacturer + "\n"
+        return ("Manufacturer : " + manufacturer + "\n"
                 + "Serial Number  : " + serialNumber + "\n"
-                + "Date           : " + manufacturedOn + "\n"
-                + "Name           : " + name);
+                + "Date : " + manufacturedOn + "\n"
+                + "Name : " + name);
+    }
+    @Override
+    public int compareTo(Product o) {
+        return this.name.compareTo(o.name);
     }
 
 
