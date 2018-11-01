@@ -1,8 +1,7 @@
-package com.company;
 /*///////////////////////////////////////////////////////////////////////////////////
 Author: Charly Garcia-Valero
   Date: 10/12/2018
-  File: com.company.Product.java
+  File: Product.java
   Description: This program implements the Item and Comparable Java interface to a create a Product
   that will be manufactured. The item created will have the features of
   + The manufacturer of the product
@@ -10,6 +9,8 @@ Author: Charly Garcia-Valero
   + Serial Number
   + Date it was manufactured
 */ ///////////////////////////////////////////////////////////////////////////////////
+package com.company;
+
 import java.util.Date;
 //This class is the Parent class for all the products that wll be produced by Oracle
 public abstract class Product implements Item, Comparable<Product> {

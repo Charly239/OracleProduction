@@ -1,3 +1,9 @@
+/*///////////////////////////////////////////////////////////////////////////////////
+Author: Charly Garcia-Valero
+  Date: 10/12/2018
+  File: ABothPlayersDriver.java
+*////////////////////////////////////////////////////////////////////////////////////
+
 package com.company;
 //Creates am instance of AudioPlayer and MoviePlayer that used MultimediaControl interface methods
 public class BothPlayersDriver {
