@@ -1,5 +1,5 @@
 package com.company;
-
+//Creates am instance of AudioPlayer and MoviePlayer that used MultimediaControl interface methods
 public class BothPlayersDriver {
     public static void main(String[] args){
         Screen S1 = new Screen("720",10,10);

@@ -1,5 +1,6 @@
 package com.company;
 
+//Creates an instance of MoviePlayer and tests methods
 public class MoviePlayerDriver {
     public static void main(String[] args){
         Screen S1 = new Screen("720",10,10);

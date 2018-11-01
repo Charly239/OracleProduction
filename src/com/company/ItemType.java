@@ -7,14 +7,14 @@ Author: Charly Garcia-Valero
 *////////////////////////////////////////////////////////////////////////////////////
 import java.lang.String;
 public enum ItemType {
-//All different com.company.Item types as well as a code or abbreviation for them
+    //All different Item types as well as an abbreviation..
     AUDIO("AU"),
     VISUAL("VI"),
     AUDIO_MOBILE("AM"),
     VISUAL_MOBILE("VM");
 
     private final String Type;
-//This method sets the type of the item
+    //This method sets the type of the item
     ItemType(String Type) {
         this.Type = Type;
     }

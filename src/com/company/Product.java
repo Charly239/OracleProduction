@@ -3,31 +3,33 @@ package com.company;
 Author: Charly Garcia-Valero
   Date: 10/12/2018
   File: com.company.Product.java
-  Description: This program implements the com.company.Item.Java interface to a create a com.company.Product
+  Description: This program implements the Item and Comparable Java interface to a create a Product
   that will be manufactured. The item created will have the features of
   + The manufacturer of the product
   + Name
   + Serial Number
   + Date it was manufactured
-*////////////////////////////////////////////////////////////////////////////////////
+*/ ///////////////////////////////////////////////////////////////////////////////////
 import java.util.Date;
-
+//This class is the Parent class for all the products that wll be produced by Oracle
 public abstract class Product implements Item, Comparable<Product> {
+
+    //Product fields
     private int serialNumber;
     private String manufacturer;
     private Date manufacturedOn;
     private String name;
     private static int currentProductionNumber = 1;
 
-    public Product(String N){
-    name = N;
-    serialNumber = currentProductionNumber++;
-    manufacturedOn = new Date();
-    manufacturer = Item.manufacturer;
+    //Constructor to set name and fields of a product
+    public Product(String N) {
+        name = N;
+        serialNumber = currentProductionNumber++;
+        manufacturedOn = new Date();
+        manufacturer = Item.manufacturer;
     }
 
-
-    public void setProductionNumber(int P){
+    public void setProductionNumber(int P) {
         currentProductionNumber = P;
     }
 
@@ -46,7 +48,7 @@ public abstract class Product implements Item, Comparable<Product> {
     public int getSerialNumber(int s) {
         return serialNumber;
     }
-
+    //Method to print Product fields
     public String toString() {
         return ("Manufacturer : " + manufacturer + "\n"
                 + "Serial Number  : " + serialNumber + "\n"
@@ -57,6 +59,5 @@ public abstract class Product implements Item, Comparable<Product> {
     public int compareTo(Product o) {
         return this.name.compareTo(o.name);
     }
-
 
 }

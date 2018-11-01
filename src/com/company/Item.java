@@ -10,9 +10,10 @@ Author: Charly Garcia-Valero
 import java.util.Date;
 
 public interface Item {
-//Define all the methods in the interface
+    //Interface fields
     String manufacturer = "OracleProduction";
 
+    //Define all the methods in the interface
     void setProductionNumber(int P);
 
     void setName(String N);

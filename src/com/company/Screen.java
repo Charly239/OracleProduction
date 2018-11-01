@@ -1,5 +1,6 @@
 package com.company;
 
+//This class creates a screen for the MoviePlayers with different Spec by implementing the ScreenSpec interface
 public class Screen implements ScreenSpec {
 
     String resolution;
@@ -19,7 +20,7 @@ public class Screen implements ScreenSpec {
     public int getRefreshRate(){
         return refreshrate;
     }
-    public int etResponseTime(){
+    public int getResponseTime(){
         return responsetime;
     }
 

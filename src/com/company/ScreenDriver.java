@@ -1,5 +1,5 @@
 package com.company;
-
+// Class is used instantiate the screen class and test the functionality of the methods
 public class ScreenDriver {
 
     public static void main(String[] args){
