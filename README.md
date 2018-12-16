@@ -17,3 +17,6 @@ If "3" is entered:
 
 If any other number is selected:
 -The user exits the program
+
+# Class Diagram 
+The class diagram is located in the repository itself.
