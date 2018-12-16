@@ -5,6 +5,7 @@ Author: Charly Garcia-Valero
   Description: Defines an Enum that will be used to define different item types.
 *////////////////////////////////////////////////////////////////////////////////////
 package com.company;
+
 import java.lang.String;
 
 public enum ItemType {
@@ -15,12 +16,14 @@ public enum ItemType {
     VISUAL_MOBILE("VM");
 
     private final String Type;
+
     //This method sets the type of the item
     ItemType(String Type) {
         this.Type = Type;
     }
+
     //This method returns the type of the item
-    public String getType(){
+    public String getType() {
         return Type;
     }
 

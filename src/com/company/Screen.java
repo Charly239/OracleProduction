@@ -12,26 +12,34 @@ public class Screen implements ScreenSpec {
     int refreshrate;
     int responsetime;
 
-    public Screen(String resolution, int refreshrate, int responsetime){
+    /**
+     *
+     * @param resolution
+     * @param refreshrate
+     * @param responsetime
+     */
+    public Screen(String resolution, int refreshrate, int responsetime) {
         this.resolution = resolution;
         this.refreshrate = refreshrate;
         this.responsetime = responsetime;
 
     }
 
-    public String getResolution(){
+    public String getResolution() {
         return resolution;
     }
-    public int getRefreshRate(){
+
+    public int getRefreshRate() {
         return refreshrate;
     }
-    public int getResponseTime(){
+
+    public int getResponseTime() {
         return responsetime;
     }
 
-    public String toString(){
-        return ("Resolution : " + resolution +"\n"
+    public String toString() {
+        return ("Resolution : " + resolution + "\n"
                 + "Refresh Rate : " + refreshrate + "\n"
-                + "Response time : " + responsetime );
+                + "Response time : " + responsetime);
     }
 }

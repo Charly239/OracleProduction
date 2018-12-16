@@ -12,6 +12,7 @@ Author: Charly Garcia-Valero
 package com.company;
 
 import java.util.Date;
+
 //This class is the Parent class for all the products that wll be produced by Oracle
 public abstract class Product implements Item, Comparable<Product> {
 
@@ -49,6 +50,7 @@ public abstract class Product implements Item, Comparable<Product> {
     public int getSerialNumber(int s) {
         return serialNumber;
     }
+
     //Method to print Product fields
     public String toString() {
         return ("Manufacturer : " + manufacturer + "\n"
@@ -56,6 +58,7 @@ public abstract class Product implements Item, Comparable<Product> {
                 + "Date : " + manufacturedOn + "\n"
                 + "Name : " + name);
     }
+
     @Override
     public int compareTo(Product o) {
         return this.name.compareTo(o.name);

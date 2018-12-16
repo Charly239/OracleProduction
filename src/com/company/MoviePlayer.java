@@ -11,12 +11,14 @@ public class MoviePlayer extends Product implements MultimediaControl {
     //Sub class fields
     Screen screen;
     MonitorType monitorType;
+
     //Construct for MoviePlayer that sets its fields
-    MoviePlayer(String name , Screen screen, MonitorType monitorType){
+    MoviePlayer(String name, Screen screen, MonitorType monitorType) {
         super(name);
         this.screen = screen;
         this.monitorType = monitorType;
     }
+
     //Methods from the interface MultimediaControl
     public void play() {
         System.out.println("Playing");
@@ -33,6 +35,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
     public void next() {
         System.out.println("movie");
     }
+
     //Prints the MoviePlayer fields
     public String toString() {
         return super.toString() + "\n"

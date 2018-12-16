@@ -22,7 +22,5 @@ public class BothPlayersDriver {
         A1.stop();
         A1.previous();
         A1.next();
-
-
     }
 }

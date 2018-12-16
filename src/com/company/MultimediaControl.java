@@ -9,8 +9,11 @@ package com.company;
 public interface MultimediaControl {
     //Interface methods
     public void play();
+
     public void stop();
+
     public void previous();
+
     public void next();
 
 }

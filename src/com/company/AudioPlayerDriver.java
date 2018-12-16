@@ -8,8 +8,8 @@ package com.company;
 
 //Creates an instance of AudioPlayer class
 public class AudioPlayerDriver {
-    public static void main(String[] args){
-        AudioPlayer A1 = new AudioPlayer("Iphone","MP4");
+    public static void main(String[] args) {
+        AudioPlayer A1 = new AudioPlayer("Iphone", "MP4");
         System.out.println(A1.toString());
         A1.play();
         A1.stop();

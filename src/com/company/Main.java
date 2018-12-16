@@ -1,55 +1,125 @@
-/*///////////////////////////////////////////////////////////////////////////////////
-Author: Charly Garcia-Valero
-  Date: 10/12/2018
-  File: Main.java
-*////////////////////////////////////////////////////////////////////////////////////
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    static Scanner scanner = new Scanner(System.in, "UTF-8");
+    static ArrayList<Product> products = new ArrayList<>();
+    static boolean notDone = true;
+    static String name;
+    static int choice;
 
-        // Write one line of code to create an ArrayList of products
-        ArrayList products = new ArrayList<>();
-        // Write one line of code to call testCollection and assign the result to the ArrayList
-        products = testCollection();
-        // Write one line of code to sort the ArrayList
-        Collections.sort(products);
-        // Call the print method on the ArrayList
-        print(products);
+    public static void main(String args[]) {
+        System.out.println("Welcome!");
+        do{
+            System.out.println("Enter 1 : Add product");
+            System.out.println("Enter 2 : Display total # items produced");
+            System.out.println("Enter 3 : Display all items");
+            System.out.println("Enter any # to exit");
+            try {
+                choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        addProduct();
+                        break;
+                    case 2:
+                        System.out.println("\nThe number of products : " + products.size());
+                        break;
+                    case 3:
+                        CollectionDriver.print(products);
+                        break;
+                    default:
+                        System.out.println("Goodbye");
+                        notDone = false;
+                }
+            } catch (Exception e) {
+                System.out.println("Didn't enter a number, try again");
+                scanner.nextLine();
+            }
+        } while (notDone);
     }
 
-    // Step 15
-    // Methods to create an example ArrayList<product>
-    public static ArrayList testCollection() {
-
-        AudioPlayer a1 = new AudioPlayer("iPod Mini","MP3");
-        AudioPlayer a2 = new AudioPlayer("Walkman","WAV ");
-        MoviePlayer m1 = new MoviePlayer("DBPOWER MK101",
-                new Screen(" 720x480", 40, 22), MonitorType.LCD);
-        MoviePlayer m2 = new MoviePlayer("Pyle PDV156BK",
-                new Screen("1366x768", 40, 22), MonitorType.LED);
-
-        // Write one line of code here to create the collection
-        ArrayList products = new ArrayList<>();
-
-        products.add(a1);
-        products.add(a2);
-        products.add(m1);
-        products.add(m2);
-        return products;
-    }
-
-    // Step 16
-    //Generic print method with a Generic ArrayList parameter
-    public static <T> void print(ArrayList<T> list){
-        for(T listItem : list){
-            System.out.println(listItem);
+    private static void addProduct() {
+        System.out.println("Add a product name to continue");
+        name = scanner.next();
+        System.out.println("Name saved");
+        System.out.println("Select 1 : Create MoviePlayer");
+        System.out.println("Select 2 : Create AudioPlayer");
+        choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                createMP(name);
+                break;
+            case 2:
+                createAP(name);
+                break;
+            default:
         }
     }
+
+    private static void createAP(String name) {
+        String audioSpec;
+        System.out.print("Enter audio spec : ");
+        audioSpec = scanner.next();
+
+        AudioPlayer ap = new AudioPlayer(name, audioSpec);
+        products.add(ap);
+
+        System.out.println("\nAudioPlayer has been added");
+        System.out.println();
+    }
+
+    private static void createMP(String name) {
+        boolean valid = true;
+        String screenResolution, monitorType;
+        int refreshRate = 0, responseTime = 0;
+        System.out.print("Enter screen resolution : ");
+        screenResolution = scanner.next();
+        while (valid) {
+            try {
+                System.out.print("Enter Refresh Rate: ");
+                refreshRate = scanner.nextInt();
+                valid = false;
+            } catch (Exception e) {
+                System.out.println("\nInvalid input. Enter a # for refresh rate\n");
+                scanner.nextLine();
+            }
+        }
+        valid = true;
+        while (valid) {
+            try {
+                System.out.print("Enter response time: ");
+                responseTime = scanner.nextInt();
+                valid = false;
+            } catch (Exception e) {
+                System.out.println("\nInvalid input. Enter a # for response time\n");
+                scanner.nextLine();
+            }
+        }
+        System.out.print("Enter LED or LCD: ");
+        monitorType = scanner.next();
+
+        switch (monitorType.toUpperCase()) {
+            case "LED":
+                MoviePlayer mp1 = new MoviePlayer(name,
+                        new Screen(screenResolution, refreshRate, responseTime), MonitorType.LED);
+                products.add(mp1);
+                break;
+            case "LCD":
+                MoviePlayer mp2 = new MoviePlayer(name,
+                        new Screen(screenResolution, refreshRate, responseTime), MonitorType.LCD);
+                products.add(mp2);
+                break;
+            default:
+                System.out.println("Error");
+        }
+        System.out.println("\nMoviePlayer has been added");
+        System.out.println();
+
+
+    }
+
 
 }

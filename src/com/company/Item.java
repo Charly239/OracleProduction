@@ -8,7 +8,7 @@ package com.company;
 import java.util.Date;
 
 public interface Item {
-//Define all the methods in the interface
+    //Define all the methods in the interface
     String manufacturer = "OracleProduction";
 
     void setProductionNumber(int P);
